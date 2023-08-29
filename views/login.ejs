@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="container">
+        <div class="content first-content">
+            <div class="first-column">
+                <h2 class="title title-primary">Bem Vindo</h2>
+                <p class="description description-primary">Site de Imoveis</p>
+                <p class="description description-primary">Enconre seu imovel favorito</p>
+            </div>    
+            <div class="second-column">
+                <h2 class="title title-second">Fazer Login</h2>
+                <p class="description description-second">Coloque seus dados</p>
+                <form class="form" action="/login" method="post"> 
+                    <label class="label-input" for="">
+                        <i class="far fa-envelope icon-modify"></i>
+                        <input type="email" placeholder="Email" name ="email">
+                    </label>
+                    
+                    <label class="label-input" for="">
+                        <i class="fas fa-lock icon-modify"></i>
+                        <input type="password" placeholder="Password" name="password">
+                    </label>
+                     
+                    <button type="submit" class="btn btn-second">Entrar</button>
+                </form>
+                <div class="ainda">
+                    <p>Ainda não tem uma conta? <a href="/cadastro">Cadastre-se</a></p>
+                </div>
+
+            </div><!-- second column -->
+        </div><!-- first content -->    
+    </div>        
+</body>
+</html>

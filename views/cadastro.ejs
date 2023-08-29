@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cadastro</title>
+    <link rel="stylesheet" type="text/css" href="css/cadastro.css">
+</head>
+<body>
+    <div class="container">
+        <div class="content first-content">
+            <div class="first-column">
+                <h2 class="title title-primary">Bem Vindo</h2>
+                <p class="description description-primary">Site de Imoveis</p>
+                <p class="description description-primary">Enconre seu imovel favorito</p>
+            </div>    
+            <div class="second-column">
+                <h2 class="title title-second">Fazer Cadastro</h2>
+                <p class="description description-second">Coloque seus dados</p>
+                <form class="form" action="/cadastro" method="POST">
+                    <label class="label-input" for="">
+                        <i class="far fa-user icon-modify"></i>
+                        <input type="text" placeholder="Name" name="name">
+                    </label>
+                    
+                    <label class="label-input" for="">
+                        <i class="far fa-envelope icon-modify"></i>
+                        <input type="email" placeholder="Email" name="email">
+                    </label>
+                    
+                    <label class="label-input" for="">
+                        <i class="fas fa-lock icon-modify"></i>
+                        <input type="password" placeholder="Password"  name="password">
+                    </label>
+                    
+                    <button type="submit" class="btn btn-second">Entrar</button>
+                </form>
+                <div class="ainda">
+                    <p>Ainda não tem uma conta? <a href="/login">Login</a></p>
+                </div>
+
+            </div><!-- second column -->
+        </div><!-- first content -->    
+    </div>        
+</body>
+</body>
+</html>
