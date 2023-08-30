@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/imoveis.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form">
+            <form class="form" action="/imoveis" method="post" enctype="multipart/form-data"> 
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Cadastre-se</h1>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-box">
+                        <label for="firstname">Descrição</label>
+                        <input id="firstname" type="text" name="description" placeholder="Digite a descrição do imovel" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="lastname">Enderenço</label>
+                        <input id="lastname" type="text" name="address" placeholder="Digite o Enderenço" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="number">Telefone</label>
+                        <input id="number" type="tel" name="phone_number" placeholder="(xx) xxxx-xxxx" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="password">valor</label>
+                        <input id="password" type="password" name="value" placeholder="Digite o valor" required>
+                    </div>
+
+
+                    <div class="input-box">
+                        <label for="image">Imagem</label>
+                        <input id="image" type="file" name="image">
+                    </div>
+                    
+                    <!-- ... Resto do formulário ... -->
+                    
+                    <div class="continue-button">
+                        <button type="submit">Continuar</button>
+                    </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

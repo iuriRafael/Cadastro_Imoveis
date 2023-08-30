@@ -23,9 +23,6 @@ router.post('/cadastro', async (req, res) => {
          const sql = 'INSERT INTO cadastro (name, email, password) VALUES (?, ?, ?)';
          await connection.execute(sql, [name || null, email || null, password || null]);
          
-         // Feche a conexão com o banco de dados
-         connection.end();
-
          res.redirect('home');
          
     } catch (error) {

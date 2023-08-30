@@ -28,6 +28,7 @@ router.post('/login', async (req, res) => {
             res.render('login', { error: 'Credenciais inválidas' });
             console.log("Usuario negado")
         }
+        
     } catch (error) {
         console.error(error);
         res.render('login', { error: 'Erro ao fazer login' });
