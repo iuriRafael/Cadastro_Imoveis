@@ -1,20 +1,17 @@
 const express = require('express');
 const router = express.Router();
+const homeModel = require('../models/homeModel');
 
-const { createConnection } = require("../models/db");
-
-router.get('/home', async (req, res) => {
+router.get('/home',  async (req, res) => {
     try {
-        const connection = await createConnection();
-        const query = 'SELECT * FROM imoveis'; // Removido o filtro por id
-        const [rows] = await connection.query(query);
-
-        res.render('home', { imoveis: rows }); // Passa todos os imóveis para a página home
-
-    } catch (error) {
+      const imoveis = await homeModel.getImoveis();
+      console.log(imoveis);
+      res.render('home', { imoveis });
+      
+      } catch (error) {
         console.error(error);
         res.redirect('/home');
-    }
-});
+      }
+    });
 
 module.exports = router;

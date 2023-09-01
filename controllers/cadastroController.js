@@ -16,7 +16,7 @@ router.post('/cadastro', async (req, res) => {
     console.log('Received data from form:', name, email, password);
 
     try {
-        await cadastroModel.insertCadastro(name, email, password);
+        await cadastroModel.Cadastro(name, email, password);
          
          res.redirect('home');
          

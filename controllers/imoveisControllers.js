@@ -3,7 +3,8 @@ const router = express.Router();
 const multer = require('multer');
 const imoveisModel = require('../models/postagem')
 
-router.use(express.json()); // transforma para json
+
+router.use(express.json()); 
 
 router.get('/imoveis', (req, res) => {
     res.render('imoveis');

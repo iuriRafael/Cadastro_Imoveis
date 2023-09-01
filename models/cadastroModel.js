@@ -1,6 +1,6 @@
 const { createConnection } = require('./db');
 
-async function insertCadastro(name, email, password) {
+async function Cadastro(name, email, password) {
   try {
     const connection = await createConnection();
     const sql = 'INSERT INTO cadastro (name, email, password) VALUES (?, ?, ?)';
@@ -14,4 +14,4 @@ async function insertCadastro(name, email, password) {
   }
 }
 
-module.exports = { insertCadastro};
+module.exports = { Cadastro};

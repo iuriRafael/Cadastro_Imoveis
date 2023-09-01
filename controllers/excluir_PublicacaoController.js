@@ -3,11 +3,10 @@ const router = express.Router();
 const publicacaoModel = require("../models/excluir_PublicacaoModels");
 
 router.post('/excluir/:id', async (req, res) => {
-    const idDaPublicacao = req.params.id; // Obtenha o ID da publicação a ser excluída
-  
+    const id = req.params.id; 
     try {
 
-      const excluidaComSucesso = await publicacaoModel.excluirPublicacaoPorId(idDaPublicacao);
+      const excluidaComSucesso = await publicacaoModel.excluirPublicacaoPorId(id);
   
       if (excluidaComSucesso) {
         res.redirect('/home'); // Altere para a página desejada

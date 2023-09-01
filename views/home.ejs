@@ -7,17 +7,17 @@
 
 <body>  
 
-  <div class="container-fluid main">
-    <div class="covertext">
-      <div class="col-lg-10" style="float:none; margin:0 auto;">
-        <a href="/login"><button>Sair</button></a>
+  <div class="container2" style="background-color: bisque; height: 25vh;">
+    <a href="/login"><button style="padding: 5px; border: 2px black solid; background-color: black ; color: aliceblue;">Sair</button></a>
+      <div class="container2" style="text-align: center; margin-top: 40px;">
         <h3 class="subtitle">Móveis que combinam estilo e conforto em um único espaço</h3>
       </div>
-      <div class="col-xs-12 explore">
+      <div class="container3" style="text-align: center; margin-top: 20px;">
         <a href="/imoveis"><button type="button" class="btn btn-lg explorebtn">ANUNCIE AQUI</button></a>
       </div>
-    </div>  
+
   </div>
+
 
   <div class="container">
     <% for (const imovel of imoveis) { %>
@@ -27,16 +27,18 @@
             <p><strong>Endereço:</strong> <%= imovel.address %></p>
             <p><strong>Telefone:</strong> <%= imovel.phone_number %></p>
             <p><strong>Valor:</strong> <%= imovel.value %></p>
-            <button>Editar</button>
+            <div class="li" style="display: flex;gap: 30px;">
+              <a href="/editar/<%= imovel.id %>" style="padding: 5px; border: 2px black solid; background-color: black ; color: aliceblue;">Editar</a>
             <form action="/excluir/<%= imovel.id %>" method="post">
               <input type="hidden" name="id">
-              <button type="submit">Excluir</button>
+              <button type="submit" style="padding: 5px; border: 2px black solid; background-color: black ; color: aliceblue;">Excluir</button>
             </form>
+            </div>
         </div>
     <% } %>
 </div>
 
-      
+    
 
 </body>
 

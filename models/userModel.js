@@ -1,10 +1,10 @@
 const { createConnection } = require('./db');
 
-async function getUserByEmailAndPassword(email, password) {
+async function login(email, password) {
   let connection;
 
   try {
-    connection = await createConnection(); // Crie uma conexão
+    connection = await createConnection(); 
     const sql = 'SELECT * FROM cadastro WHERE email = ? AND password = ?';
     const [rows] = await connection.execute(sql, [email, password]);
 
@@ -14,6 +14,4 @@ async function getUserByEmailAndPassword(email, password) {
   } 
 }
 
-module.exports = {
-  getUserByEmailAndPassword,
-};
+module.exports = { login,};
