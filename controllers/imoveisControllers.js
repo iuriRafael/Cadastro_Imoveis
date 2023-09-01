@@ -9,8 +9,7 @@ router.get('/imoveis', (req, res) => {
     res.render('imoveis');
 });
 
-
-// Configure multer to handle file uploads
+//Configura o multer para lidar com uploads de arquivos
 const storage = multer.diskStorage({
     destination: './uploads', // guardar na pasta 
     filename: (req, file, cb) => { //nome do arquivo
@@ -29,14 +28,11 @@ router.post('/imoveis', upload.single('image'), async (req, res) => {
   
     try {
       const connection = await createConnection(); // Crie uma conexão
-  
       const query = 'INSERT INTO imoveis (image_url, description, address, phone_number, value) VALUES (?, ?, ?, ?, ?)';
       const [result] = await connection.execute(query, [filePath, description, address, phone_number, value]);
   
       console.log('Dados e imagem enviados e salvos com sucesso!', result);
   
-      await connection.end(); // Feche a conexão
-
       res.redirect('/home');
     } catch (error) {
       console.error(error);

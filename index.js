@@ -13,6 +13,7 @@ app.set('views', 'views');
 
 app.use(express.urlencoded({ extended: true })); // Configurando o express para lidar com dados de formulários
 app.use(express.static('public'));
+app.use('/uploads', express.static(__dirname + '/uploads'));
 
 app.use('/', loginController);
 app.use('/', cadastroController);
