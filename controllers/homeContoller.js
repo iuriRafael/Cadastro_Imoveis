@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const homeModel = require('../models/homeModel');
 
+
+
 router.get('/home',  async (req, res) => {
     try {
       const imoveis = await homeModel.getImoveis();
