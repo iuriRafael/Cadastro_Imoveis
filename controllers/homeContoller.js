@@ -3,7 +3,6 @@ const router = express.Router();
 
 const { createConnection } = require("../models/db");
 
-
 router.get('/home', async (req, res) => {
     try {
         const connection = await createConnection();

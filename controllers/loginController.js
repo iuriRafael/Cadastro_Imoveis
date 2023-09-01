@@ -1,7 +1,7 @@
-// loginController.js
+
 const express = require('express');
 const router = express.Router();
-const { createConnection } = require('../models/db'); // Importe a função de conexão
+const userModel = require('../models/userModel');
 
 router.use(express.json()); // transforma o payload do request em json
 
@@ -13,11 +13,7 @@ router.post('/login', async (req, res) => {
     const { email, password } = req.body;
 
     try {
-        const connection = await createConnection(); // Crie uma conexão
-        const sql = 'SELECT * FROM cadastro WHERE email = ? AND password = ?';
-        
-        // Use a função execute para realizar a consulta
-        const [rows] = await connection.execute(sql, [email, password]);
+        const rows = await userModel.getUserByEmailAndPassword(email, password);
 
         if (rows.length > 0) {
             // Usuário encontrado, faça o redirecionamento para a página de sucesso ou home
