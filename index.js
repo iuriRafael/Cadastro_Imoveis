@@ -3,7 +3,7 @@ const cadastroController = require('./controllers/cadastroController');
 const loginController = require('./controllers/loginController');
 const homeController = require('./controllers/homeContoller');
 const imoveisControllers = require("./controllers/imoveisControllers");
-
+const excluirControllers = require("./controllers/excluir_PublicacaoController");
 
 const app = express();
 const port = 5000;
@@ -19,6 +19,8 @@ app.use('/', loginController);
 app.use('/', cadastroController);
 app.use("/", homeController)
 app.use("/", imoveisControllers);
+app.use("/", excluirControllers);
+
 
 
 app.listen(port,()=>{

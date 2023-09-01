@@ -27,7 +27,11 @@
             <p><strong>Endereço:</strong> <%= imovel.address %></p>
             <p><strong>Telefone:</strong> <%= imovel.phone_number %></p>
             <p><strong>Valor:</strong> <%= imovel.value %></p>
-            <button>Ver mais</button>
+            <button>Editar</button>
+            <form action="/excluir/<%= imovel.id %>" method="post">
+              <input type="hidden" name="id">
+              <button type="submit">Excluir</button>
+            </form>
         </div>
     <% } %>
 </div>

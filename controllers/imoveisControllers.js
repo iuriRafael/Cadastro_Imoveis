@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const multer = require('multer');
-const  { createConnection } = require("../models/db");
+const imoveisModel = require('../models/postagem')
 
 router.use(express.json()); // transforma para json
 
@@ -27,11 +27,7 @@ router.post('/imoveis', upload.single('image'), async (req, res) => {
     const filePath = uploadedFile.filename; 
   
     try {
-      const connection = await createConnection(); // Crie uma conexão
-      const query = 'INSERT INTO imoveis (image_url, description, address, phone_number, value) VALUES (?, ?, ?, ?, ?)';
-      const [result] = await connection.execute(query, [filePath, description, address, phone_number, value]);
-  
-      console.log('Dados e imagem enviados e salvos com sucesso!', result);
+      await imoveisModel.insertImovel(filePath, description, address, phone_number, value);
   
       res.redirect('/home');
     } catch (error) {
