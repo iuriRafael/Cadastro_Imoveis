@@ -2,11 +2,12 @@ const express = require('express');
 const router = express.Router();
 const multer = require('multer');
 const imoveisModel = require('../models/postagem')
+const isAuthenticated = require('../middleware/middleware');
 
 
 router.use(express.json()); 
 
-router.get('/imoveis', (req, res) => {
+router.get('/imoveis', isAuthenticated, (req, res) => {
     res.render('imoveis');
 });
 

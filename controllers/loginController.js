@@ -16,6 +16,8 @@ router.post('/login', async (req, res) => {
         const rows = await userModel.login(email, password);
 
         if (rows.length > 0) {
+
+            req.session.user = { email, password };
             console.log("Usuario logado");
             res.redirect('/home');
         } else {

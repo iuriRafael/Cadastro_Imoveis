@@ -1,10 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const homeModel = require('../models/homeModel');
+const isAuthenticated = require('../middleware/middleware');
 
 
 
-router.get('/home',  async (req, res) => {
+router.get('/home', isAuthenticated, async (req, res) => {
     try {
       const imoveis = await homeModel.getImoveis();
       console.log(imoveis);

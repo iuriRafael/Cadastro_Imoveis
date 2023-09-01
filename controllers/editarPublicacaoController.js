@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const publicacaoModel = require('../models/editarPublicacaoModel');
+const isAuthenticated = require('../middleware/middleware');
  
 
-router.get('/editar/:id', async (req, res) => {
+router.get('/editar/:id', isAuthenticated, async (req, res) => {
   const id= req.params.id; 
 
   try {

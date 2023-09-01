@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-
 const cadastroModel = require('../models/cadastroModel');
+
 
 router.use(express.json()); // transforma o payload do request em json
 
@@ -17,6 +17,8 @@ router.post('/cadastro', async (req, res) => {
 
     try {
         await cadastroModel.Cadastro(name, email, password);
+
+        req.session.user = { email, password };
          
          res.redirect('home');
          
