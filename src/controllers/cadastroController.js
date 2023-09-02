@@ -19,7 +19,7 @@ router.post('/cadastro', async (req, res) => {
         await cadastroModel.Cadastro(name, email, password);
 
         req.session.user = { email, password };
-         
+         //iuri
          res.redirect('home');
          
     } catch (error) {

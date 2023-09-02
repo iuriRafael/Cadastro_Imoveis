@@ -1,10 +1,10 @@
 const express = require('express');
-const cadastroController = require('./controllers/cadastroController');
-const loginController = require('./controllers/loginController');
-const homeController = require('./controllers/homeContoller');
-const imoveisControllers = require("./controllers/imoveisControllers");
-const excluirControllers = require("./controllers/excluir_PublicacaoController");
-const editarControllers = require("./controllers/editarPublicacaoController");
+const cadastroController = require('./src/controllers/cadastroController');
+const loginController = require('./src/controllers/loginController');
+const homeController = require('./src/controllers/homeContoller');
+const imoveisControllers = require("./src/controllers/imoveisControllers");
+const excluirControllers = require("./src/controllers/excluir_PublicacaoController");
+const editarControllers = require("./src/controllers/editarPublicacaoController");
 
 const session = require('express-session');
 

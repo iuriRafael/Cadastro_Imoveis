@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const multer = require('multer');
-const imoveisModel = require('../models/postagem')
+const imoveisModel = require('../models/postagem');
 const isAuthenticated = require('../middleware/middleware');
 
 
