@@ -7,14 +7,23 @@
 </head>
 
 <style>
-  /* Estilos gerais para o formulário */
-/* Estilos gerais para o formulário */
+  html, body {
+            height: 100%;
+            margin: 0;
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+ body{
+    background-image: url('https://eticimoveis.com.br/media/eticimoveis/2018/06/Permuta-troca-de-imoveis.jpg');
+    background-size: cover;
+    background-position: center;
+ }
 
 .tudo{
   align-items: center;
   justify-content: center;
   display: flex;
-  margin-top: 7vw;
+  margin-top: 12vw;
 }
 form {
   display: flex;
@@ -51,7 +60,27 @@ button[type="submit"] {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 18px; /* Aumenta o tamanho da fonte para o botão */
+  font-size: 18px; 
+
+}
+
+.botao{
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.botão{
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
 }
 
 /* Responsividade para telas menores */
@@ -59,6 +88,7 @@ button[type="submit"] {
   form {
     max-width: 100%;
   }
+
 }
 
 @media (max-width: 480px) {
@@ -66,11 +96,12 @@ button[type="submit"] {
   input[type="tel"] {
     width: 100%;
   }
+
 }
 
 
 </style>
-<body style="height: 100vh;">
+<body style="height: 95vh;">
   <div class="tudo">
     <form action="/atualizar" method="post">
       <input type="hidden" name="id" value="<%= publicacao.id %>">
@@ -95,8 +126,12 @@ button[type="submit"] {
       </div>
     
       <!-- Adicione outros campos de edição conforme necessário -->
-    
+    <div class="botao">
       <button type="submit">Salvar</button>
+      <a href="/home">
+        <button type="button" class="botão" style="background-color: red;">voltar</button>
+      </a>
+    </div>
     </form>
   </div>
   

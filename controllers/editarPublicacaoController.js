@@ -33,13 +33,18 @@ router.post('/atualizar', async (req, res) => {
     const atualizacao = await publicacaoModel.atualizarPublicacao(id, Descricao, Endereco, Telefone, Valor);
 
     if (atualizacao) {
-      res.redirect('/home');
+      // Configurar a mensagem de sucesso na sessão
+      req.session.successMessage = 'Imóvel atualizado com sucesso!';
     } else {
-      res.status(500).send('Erro ao atualizar a publicação.');
+      req.session.errorMessage = 'Erro ao atualizar a publicação.';
     }
-  } catch (error) {
+
+    // Redirecione para a página home
+    res.redirect('/home');
+  }  catch (error) {
     console.error(error);
-    res.status(500).send('Erro ao atualizar a publicação.');
+    req.session.errorMessage = 'Erro ao atualizar a publicação.';
+    res.redirect('/home');
   }
 });
 

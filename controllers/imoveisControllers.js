@@ -30,6 +30,8 @@ router.post('/imoveis', upload.single('image'), async (req, res) => {
   
     try {
       await imoveisModel.insertImovel(filePath, description, address, phone_number, value);
+
+      req.session.successMessage = 'Imóvel cadastrado com sucesso!';
   
       res.redirect('/home');
     } catch (error) {

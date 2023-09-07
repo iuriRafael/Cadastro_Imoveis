@@ -1,0 +1,19 @@
+<% if (typeof successMessage !== 'undefined' && successMessage !== null) { %>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <%= message %>
+    </div>
+
+    <script>
+        var successMessage = "<%= message %>";
+        if (successMessage) {
+          var alertElement = document.querySelector('.alert');
+          if (alertElement) {
+            alertElement.style.display = 'block';
+            setTimeout(function () {
+              alertElement.style.display = 'none';
+            }, 5000);
+          }
+        }
+
+    </script>
+<% } %>
