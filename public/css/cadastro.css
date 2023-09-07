@@ -6,13 +6,15 @@
 }
 body {
     font-family: 'Open Sans', sans-serif;
+    background-image: url('https://eticimoveis.com.br/media/eticimoveis/2018/06/Permuta-troca-de-imoveis.jpg');
+    background-size: cover;
+    background-position: center;
 }
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #0bc6eb;
 }
 .content {
     background-color: #fff;

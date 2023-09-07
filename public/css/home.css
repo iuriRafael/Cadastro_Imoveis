@@ -1,12 +1,15 @@
-.tudo {
-  min-height: 70vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+body{
   background-image: url('https://eticimoveis.com.br/media/eticimoveis/2018/06/Permuta-troca-de-imoveis.jpg');
   background-size: cover;
   background-position: center;
+  min-height: 70vh;
+}
+
+.tudo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 30px;
 }
 
 .px-3{
@@ -23,3 +26,6 @@
 }
 
 
+.tudoss{
+  width: 10px;
+}
